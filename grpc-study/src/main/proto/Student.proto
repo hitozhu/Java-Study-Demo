@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package com.htzhu.protobuf.student;
+
+option java_package = "com.htzhu.protobuf.student";
+option java_outer_classname = "StudentProto";
+//将属性生成多个文件，便于代码管理
+option java_multiple_files = true;
+
+//定义rpc方法
+service StudentService {
+
+    //一元RPC
+    rpc GetRealNameByUsername (MyRequest) returns (MyResponse) {
+    }
+}
+
+message MyRequest {
+    string username = 1;
+}
+
+message MyResponse {
+    string realname = 2;
+}
