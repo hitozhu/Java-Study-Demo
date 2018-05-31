@@ -22,6 +22,12 @@ public class HelloServiceClient {
 
 		TSocket tSocket = new TSocket("localhost", port, 30000);
 
+		// 传输协议
+		// TBinaryProtocol:二进制协议
+		// TCompactProtocol:压缩格式
+		// TJSONProtocol:json 格式
+		// TDebugProtocol:易读的文本格式，便于debug
+		// TSimpleJSONProtocol:json 只写
 		TBinaryProtocol protocol = new TBinaryProtocol(tSocket);
 		Hello.Client client = new Hello.Client(protocol);
 
