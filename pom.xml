@@ -13,6 +13,7 @@
         <module>netty-study</module>
         <module>grpc-study</module>
         <module>thrift-study</module>
+        <module>zookeeper-study</module>
     </modules>
 
     <name>Java-Study-Demo</name>
@@ -47,6 +48,9 @@
         <protobuf-java.version>3.5.1</protobuf-java.version>
         <logback.version>1.1.7</logback.version>
         <thrift.version>0.10.0</thrift.version>
+        <zookeeper.version>3.4.10</zookeeper.version>
+        <zkclient.version>0.2</zkclient.version>
+        <curator.version>2.12.0</curator.version>
     </properties>
 
     <dependencyManagement>
@@ -103,6 +107,27 @@
                 <artifactId>libthrift</artifactId>
                 <version>0.10.0</version>
             </dependency>
+
+            <!-- zookeeper-->
+            <dependency>
+                <groupId>org.apache.zookeeper</groupId>
+                <artifactId>zookeeper</artifactId>
+                <version>${zookeeper.version}</version>
+            </dependency>
+            <!-- zkclient -->
+            <dependency>
+                <groupId>com.101tec</groupId>
+                <artifactId>zkclient</artifactId>
+                <version>${zkclient.version}</version>
+            </dependency>
+
+            <!-- curator -->
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-recipes</artifactId>
+                <version>${curator.version}</version>
+            </dependency>
+
 
         </dependencies>
     </dependencyManagement>

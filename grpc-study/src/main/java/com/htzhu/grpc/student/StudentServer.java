@@ -63,6 +63,7 @@ public class StudentServer {
 
 
 	public class StudentServiceImpl extends StudentServiceGrpc.StudentServiceImplBase {
+
 		/**
 		 * @param request 请求参数对象
 		 * @param responseObserver 返回给客户端的结果对象

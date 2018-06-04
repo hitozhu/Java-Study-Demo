@@ -51,6 +51,7 @@ public class HelloWorldServer {
 	}
 
 	public class GreeterImpl extends GreeterGrpc.GreeterImplBase {
+
 		@Override
 		public void sayHello(HelloRequest request, StreamObserver<HelloReply> responseObserver) {
 			log.info("server received msg:{}", request.getName());
