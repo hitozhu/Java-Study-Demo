@@ -14,6 +14,7 @@
         <module>grpc-study</module>
         <module>thrift-study</module>
         <module>zookeeper-study</module>
+        <module>guice-study</module>
     </modules>
 
     <name>Java-Study-Demo</name>
@@ -51,6 +52,7 @@
         <zookeeper.version>3.4.10</zookeeper.version>
         <zkclient.version>0.2</zkclient.version>
         <curator.version>2.12.0</curator.version>
+        <guice.version>4.1.0</guice.version>
     </properties>
 
     <dependencyManagement>
@@ -128,6 +130,12 @@
                 <version>${curator.version}</version>
             </dependency>
 
+            <!-- guice -->
+            <dependency>
+                <groupId>com.google.inject</groupId>
+                <artifactId>guice</artifactId>
+                <version>${guice.version}</version>
+            </dependency>
 
         </dependencies>
     </dependencyManagement>
