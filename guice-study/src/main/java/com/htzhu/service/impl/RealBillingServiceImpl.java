@@ -9,6 +9,7 @@ import com.htzhu.service.LogService;
 import com.htzhu.vo.CreditCard;
 import com.htzhu.vo.PizzaOrder;
 import com.htzhu.vo.Receipt;
+import com.sun.istack.internal.Nullable;
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -31,7 +32,7 @@ public class RealBillingServiceImpl implements BillingService {
 	@Inject
 	public RealBillingServiceImpl(@PayPal CreditCardProcessor processor,
 			@Named("log") LogService logService,
-			CreditCard creditCard,
+			@Nullable CreditCard creditCard,
 			SessionManager sessionManager) {
 		this.processor = processor;
 		this.logService = logService;
