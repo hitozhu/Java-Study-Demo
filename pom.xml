@@ -15,6 +15,7 @@
         <module>thrift-study</module>
         <module>zookeeper-study</module>
         <module>guice-study</module>
+        <module>nio-study</module>
     </modules>
 
     <name>Java-Study-Demo</name>
