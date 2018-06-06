@@ -30,12 +30,16 @@ public class NonBlockNIOServer {
 		Selector selector = Selector.open();
 
 		// 通道绑定到选择器上，监听接收事件
+//		SelectionKey.OP_CONNECT 连接
+//		SelectionKey.OP_ACCEPT 接收
+//		SelectionKey.OP_READ 读
+//		SelectionKey.OP_WRITE 写
 		socketChannel.register(selector, SelectionKey.OP_ACCEPT);
 
-		// 有事件
+		// I/O 准备就绪的通道
 		while (selector.select() > 0) {
 			Iterator<SelectionKey> iterator = selector.selectedKeys().iterator();
-
+			// 遍历 selectedKey
 			while (iterator.hasNext()) {
 				SelectionKey selectionKey = iterator.next();
 				// 接收事件
@@ -47,11 +51,12 @@ public class NonBlockNIOServer {
 					// 注册，监听读事件
 					channel.register(selector, SelectionKey.OP_READ);
 				} else if (selectionKey.isReadable()) {
+					// 读就绪
 					// 获取管道
 					SocketChannel channel = (SocketChannel) selectionKey.channel();
 
+					// 读取客户端数据
 					ByteBuffer byteBuffer = ByteBuffer.allocate(1024);
-
 					while (channel.read(byteBuffer) > 0) {
 						// 切换模式
 						byteBuffer.flip();
@@ -63,6 +68,11 @@ public class NonBlockNIOServer {
 					}
 				}
 
+				// 其他几个事件
+//				selectionKey.isWritable(); // 键的管道是否可写
+//				selectionKey.isConnectable(); // 键的管道是否可连接
+//				selectionKey.isValid(); // 键是否有效
+				// 需要手动移除
 				iterator.remove();
 			}
 
