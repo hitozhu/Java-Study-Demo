@@ -18,6 +18,7 @@
         <module>design-patterns</module>
         <module>concurrent-study</module>
         <module>jpush-study</module>
+        <module>netty-study</module>
 
     </modules>
 
@@ -58,6 +59,8 @@
         <curator.version>2.12.0</curator.version>
         <guice.version>4.1.0</guice.version>
         <jpush.version>3.3.6</jpush.version>
+        <kryo.version>2.24.0</kryo.version>
+        <kryo-serializers>0.42</kryo-serializers>
     </properties>
 
     <dependencyManagement>
@@ -147,6 +150,18 @@
                 <groupId>cn.jpush.api</groupId>
                 <artifactId>jpush-client</artifactId>
                 <version>${jpush.version}</version>
+            </dependency>
+
+            <!-- kryp -->
+            <dependency>
+                <groupId>com.esotericsoftware.kryo</groupId>
+                <artifactId>kryo</artifactId>
+                <version>${kryo.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>de.javakaffee</groupId>
+                <artifactId>kryo-serializers</artifactId>
+                <version>${kryo-serializers}</version>
             </dependency>
 
         </dependencies>
