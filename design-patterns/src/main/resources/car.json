@@ -1,0 +1,16 @@
+{
+  "model": "300SL",
+  "parts": [
+    {
+      "model": "15C",
+      "price": 100,
+      "type": "wheel"
+    },
+    {
+      "model": "Lambo",
+      "price": 300,
+      "type": "door"
+    }
+  ],
+  "price": 10000
+}

@@ -10,12 +10,15 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>netty-study</module>
         <module>grpc-study</module>
         <module>thrift-study</module>
         <module>zookeeper-study</module>
         <module>guice-study</module>
         <module>nio-study</module>
+        <module>design-patterns</module>
+        <module>concurrent-study</module>
+        <module>jpush-study</module>
+
     </modules>
 
     <name>Java-Study-Demo</name>
@@ -54,6 +57,7 @@
         <zkclient.version>0.2</zkclient.version>
         <curator.version>2.12.0</curator.version>
         <guice.version>4.1.0</guice.version>
+        <jpush.version>3.3.6</jpush.version>
     </properties>
 
     <dependencyManagement>
@@ -136,6 +140,13 @@
                 <groupId>com.google.inject</groupId>
                 <artifactId>guice</artifactId>
                 <version>${guice.version}</version>
+            </dependency>
+
+            <!-- jpush -->
+            <dependency>
+                <groupId>cn.jpush.api</groupId>
+                <artifactId>jpush-client</artifactId>
+                <version>${jpush.version}</version>
             </dependency>
 
         </dependencies>
